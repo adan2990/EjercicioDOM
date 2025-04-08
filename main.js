@@ -55,5 +55,14 @@ encabezado1.innerHTML = "<em>Ejercicio</em> DOM";
 
 btnMostrar.addEventListener("click", function (event){
     event.preventDefault();//no hagas lo que haces por defecto
-    console.log("boton btnModificar presionado");
+
+
+    let element = document.createElement("li");
+    element.innerText="Another item";
+    element.classList.add("list-group-item");
+
+    let element2 = element.cloneNode(true);
+
+    listas.item(0).before(element);
+    listas.item(0).prepend(element2);
 });
