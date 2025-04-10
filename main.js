@@ -63,6 +63,25 @@ btnMostrar.addEventListener("click", function (event){
 
     let element2 = element.cloneNode(true);
 
-    listas.item(0).before(element);
-    listas.item(0).prepend(element2);
+    // listas.item(0).before(element);
+    // listas.item(0).prepend(element2);
+
+    listas.item(1).insertAdjacentHTML("beforebegin", `<li class="list-group-item>Begore Begin item</li>`);
+    listas.item(1).insertAdjacentHTML("afterend", `<li class="list-group-item>Begore Begin item</li>`);
+    listas.item(1).insertAdjacentHTML("afterebegin", `<li class="list-group-item>Begore Begin item</li>`);
+    listas.item(1).insertAdjacentHTML("beforeend", `<li class="list-group-item>Begore Begin item</li>`);
+
+    // Función que convierte a mayúsculas
+function convertirAMayusculas(event) {
+    event.target.value = event.target.value.toUpperCase();
+}
+
+// Obtener campos
+let campoRFC = document.getElementById("rfc");
+let campoCURP = document.getElementById("curp");
+
+// Asociar eventos blur
+campoRFC.addEventListener("blur", convertirAMayusculas);
+campoCURP.addEventListener("blur", convertirAMayusculas);
+
 });
